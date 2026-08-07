@@ -11,6 +11,21 @@ No signup, no API key, no account. 20 calls per caller per hour.
 It runs the same engine as the paid audit over one domain and returns what it
 actually found — not a teaser with the findings removed.
 
+## Every check gets a page you can send to someone
+
+```jsonc
+{
+  "domain": "stripe.com",
+  "grade": "A",
+  "report_url": "https://guild.tradeuniquecapital.com/r/bad8482e9e93"
+}
+```
+
+A permanent, shareable page with the verdict, the records found, and what to
+change — the thing you forward to whoever runs the DNS. Kept 90 days.
+
+A correctly configured domain gets a page saying so, with nothing to buy.
+
 ## What it checks
 
 - **SPF**, including the RFC 7208 ten-lookup limit that silently breaks it
