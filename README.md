@@ -74,10 +74,30 @@ print(result["grade"], result["findings"]["dmarc"])
 JavaScript is in `examples/check.js` — it is twenty lines and has no
 dependencies.
 
+## MCP server — plug it into any agent
+
+The API is also an MCP server, so Claude (or anything MCP-capable) can call
+it as a native tool:
+
+```
+https://guild.tradeuniquecapital.com/mcp
+```
+
+Streamable HTTP, stateless, no auth, no key. Three tools:
+
+| Tool | What it does |
+|---|---|
+| `check_domain` | The free check, with the shareable report URL |
+| `list_services` | The paid catalogue and order URLs |
+| `partner_program` | The referral terms — what a referred sale pays you |
+
+Claude Code: `claude mcp add --transport http agpc https://guild.tradeuniquecapital.com/mcp`
+
 ## Machine-readable
 
 | | |
 |---|---|
+| MCP server | `https://guild.tradeuniquecapital.com/mcp` |
 | OpenAPI 3.1 | `https://guild.tradeuniquecapital.com/openapi.json` |
 | Agent card | `https://guild.tradeuniquecapital.com/.well-known/agent-card.json` |
 | One-fetch summary | `https://guild.tradeuniquecapital.com/.well-known/agents.json` |
